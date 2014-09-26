@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+<title>Cadastro de Automóvel</title>
+</h:head>
+<h:body>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="Nome: " />
+			<h:inputText value="#{automovelMB.automovel.nome}" />
+			
+			<h:outputText value="Ano: " />
+			<h:inputText value="#{automovelMB.automovel.ano}" />
+		
+			<h:commandButton action="#{automovelMB.salvar()}" value="Salvar" />
+		</h:panelGrid>
+		
+		<h:dataTable value="#{automovelMB.automoveis}" var="auto">
+			<h:column>
+				#{auto.id}
+			</h:column>
+			
+			<h:column>
+				#{auto.nome}
+			</h:column>
+		
+			<h:column>
+				#{auto.ano}
+			</h:column>
+			
+			<h:column>
+				#{auto.marca.nome}
+			</h:column>
+			
+			<h:column>
+				<h:commandButton value="Editar" >
+					<f:setPropertyActionListener target="#{automovelMB.automovel}" 
+					value="#{auto}" />
+				</h:commandButton>
+			</h:column>
+				
+			
+		</h:dataTable>
+	</h:form>
+
+</h:body>
+</html>

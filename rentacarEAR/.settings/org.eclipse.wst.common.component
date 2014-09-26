@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="rentacarEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="rentacar.jar" deploy-path="/" handle="module:/resource/rentacar/rentacar">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="rentacarClient.jar" deploy-path="/" handle="module:/resource/rentacarClient/rentacarClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="rentacarJPA.jar" deploy-path="/lib" handle="module:/resource/rentacarJPA/rentacarJPA">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="rentacarWeb.war" deploy-path="/" handle="module:/resource/rentacarWeb/rentacarWeb">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>
